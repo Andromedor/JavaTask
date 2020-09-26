@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 
-public class Massive   {
+public class Massive {
 
 
-    public void PrintArray(){
+    public void PrintArray() {
         int[][] array = new int[5][5];
         int n = array.length;
         Random random = new Random();
@@ -17,9 +17,9 @@ public class Massive   {
             }
         }
 
-        for (int i =0; i < array.length; i++){
-            for (int j =0; j < array[i].length; j++){
-                if(j + i == n -1){
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if (j + i == n - 1) {
                     array[i][j] *= 2;
                 }
             }
@@ -33,20 +33,31 @@ public class Massive   {
             System.out.println();
         }
     }
+    public static int[] FillArray(int begin, int end, int step) throws Exception {
+        if (step == 0) {
+            throw new Exception("\n" +
+                    "invalid number");
 
+        }
+        if (begin == end) {
+            return new int[0];
+        }
+        if (begin > end)
+            Math.abs(step);
 
-        public void  FillArray()
-        {
-            Random random = new Random();
-            int[] array = new int[random.nextInt(20)];
-            int begin = random.nextInt(20);
-            int step = random.nextInt(30);
-            System.out.println("---------------");
-            for (int i = 0; i < array.length; i++) {
-                array[i] = begin;
-                begin = array[i] + step;
-                System.out.print(array[i] + "  ");
-            }
+        int capacity = 1 + ((end - begin) / step);
+        int[] array = new int[capacity];
+        array[0] = begin;
+        for(int i=1; i<array.length; i++) {
+            array[i] = array[i - 1] + step;
         }
+        return array;
+    }
+    public static void showArray(int[] array) {
+        for(int i=0; i<array.length; i++) {
+            System.out.print(array[i] + " ");
         }
+    }
+}
+
 

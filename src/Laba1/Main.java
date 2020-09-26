@@ -6,7 +6,16 @@ public class Main  {
 
         Massive massive = new Massive();
         massive.PrintArray(); // 1 задание
-       massive.FillArray();
+
+        System.out.println("\nArray with step");
+        try
+        {
+            massive.showArray(massive.FillArray(2, 14, 1));
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
 }
 
