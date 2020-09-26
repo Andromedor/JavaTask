@@ -45,8 +45,8 @@ public class Massive {
         if (begin > end)
             Math.abs(step);
 
-        int capacity = 1 + ((end - begin) / step);
-        int[] array = new int[capacity];
+        int quantity = 1 + ((end - begin) / step);
+        int[] array = new int[quantity];
         array[0] = begin;
         for(int i=1; i<array.length; i++) {
             array[i] = array[i - 1] + step;

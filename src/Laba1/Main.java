@@ -10,7 +10,7 @@ public class Main  {
         System.out.println("\nArray with step");
         try
         {
-            massive.showArray(massive.FillArray(2, 14, 1));
+            massive.showArray(massive.FillArray(2, 14, 4));
         }
         catch (Exception e)
         {
